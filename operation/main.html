@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operation</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="js.js" defer></script>
+</head>
+<body>
+     <main>
+
+        <header>
+            <div>
+                <small>SPLATOON 3 / OBS CONTROL</small>
+                <h1>大会オーバーレイ操作</h1>
+            </div>
+
+            <span id="connection" class="badge offline">
+                未接続
+            </span>
+        </header>
+
+        <section class="panel">
+            <h2>大会・試合情報</h2>
+
+            <div class="fields">
+
+                <label>
+                    大会名
+                    <input id="eventName" value="INK CLASH CUP">
+                </label>
+
+                <label>
+                    ラウンド
+                    <input id="roundName" value="GRAND FINAL">
+                </label>
+
+                <label>
+                    チームA名
+                    <input id="teamA" value="BLUE">
+                </label>
+
+                <label>
+                    チームB名
+                    <input id="teamB" value="ORANGE">
+                </label>
+
+                <label>
+                    シリーズ形式
+                    <select id="matchStatus">
+                        <option>BEST OF 3</option>
+                        <option selected>BEST OF 5</option>
+                        <option>BEST OF 7</option>
+                    </select>
+                </label>
+
+                <label>
+                    ゲーム番号
+                    <select id="gameNumber">
+                        <option>GAME 1</option>
+                        <option>GAME 2</option>
+                        <option>GAME 3</option>
+                        <option>GAME 4</option>
+                        <option>GAME 5</option>
+                        <option>GAME 6</option>
+                        <option>GAME 7</option>
+                    </select>
+                </label>
+
+                <label>
+                    ルール
+                    <select id="mode">
+                        <option>ナワバリバトル</option>
+                        <option>ガチエリア</option>
+                        <option>ガチヤグラ</option>
+                        <option>ガチホコバトル</option>
+                        <option>ガチアサリ</option>
+                        <option>イベントマッチ</option>
+                    </select>
+                </label>
+
+                <label>
+                    ステージ
+                    <input id="stage" value="ステージ名">
+                </label>
+
+                <label>
+                    試合状況
+                    <select id="seriesFormat">
+                        <option>UP NEXT</option>
+                        <option>MATCH IN PROGRESS</option>
+                        <option>GAME COMPLETE</option>
+                        <option>PAUSED</option>
+                    </select>
+                </label>
+
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>セットスコア</h2>
+
+            <div class="score">
+
+                <div class="scoreteam">
+                    <b id="nameA">BLUE</b>
+
+                    <div class="scorebuttons">
+                        <button data-side="A" data-delta="-1" class="secondary">
+                            −
+                        </button>
+
+                        <output id="winsA">0</output>
+
+                        <button data-side="A" data-delta="1">
+                            ＋
+                        </button>
+                    </div>
+                </div>
+
+                <div class="scoreteam">
+                    <b id="nameB">ORANGE</b>
+
+                    <div class="scorebuttons">
+                        <button data-side="B" data-delta="-1" class="secondary">
+                            −
+                        </button>
+
+                        <output id="winsB">0</output>
+
+                        <button data-side="B" data-delta="1">
+                            ＋
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="actions">
+                <button id="send">
+                    表示を更新
+                </button>
+
+                <button id="reset" class="secondary">
+                    スコアを0-0に戻す
+                </button>
+            </div>
+
+            <p class="hint">
+                スコアボタンは押すたびに勝利数を増減します。
+                変更後「表示を更新」で配信画面へ反映します。
+            </p>
+
+            <p id="feedback" aria-live="polite"></p>
+
+        </section>
+
+        <section class="panel">
+            <h2>チーム情報</h2>
+
+            <div class="fields">
+
+                <label>
+                    チームAメンバー
+                    <input id="memberA1" class="memberA"  value="A1">
+                    <input id="memberA2" class="memberA"  value="A2">
+                    <input id="memberA3" class="memberA"  value="A3">
+                    <input id="memberA4" class="memberA"  value="A4">
+                </label>
+
+                <label>
+                    チームBメンバー
+                    <input id="memberB1" class="memberB" value="B1">
+                    <input id="memberB2" class="memberB" value="B2">
+                    <input id="memberB3" class="memberB" value="B3">
+                    <input id="memberB4" class="memberB" value="B4">
+                </label>
+                <div class="actions">
+                    <button id="sendMember">
+                        メンバーを更新
+                    </button>
+                    <button id="resetMember" class="secondary">
+                        メンバーをリセット
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>

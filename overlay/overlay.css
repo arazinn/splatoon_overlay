@@ -5,7 +5,7 @@
   padding: 1em;/*文字周りの余白*/
   display: inline-block;
   line-height: 0.5;/*行高*/
-  background: #6cbdff;/*背景色*/
+  background: white;/*背景色*/
   vertical-align: middle;
   border-radius: 0px 25px 25px 0px;/*左側の角を丸く*/
    background-image: -webkit-linear-gradient(60deg,transparent 30%,rgb(255, 255, 255) 70%,rgb(255, 255, 255) 100%,transparent 60%);
@@ -20,17 +20,99 @@
   padding: 1em;/*文字周りの余白*/
   display: inline-block;
   line-height: 0.5;/*行高*/
-  background: #f7ff60;/*背景色*/
+  background: white;/*背景色*/
   vertical-align: middle;
 
   border-radius: 25px 0px 0px 25px;/*左側の角を丸く*/
    background-image: -webkit-linear-gradient(120deg,transparent 30%,rgba(255,255,255) 70%,rgba(255,255,255) 100%,transparent 60%);
-  background-image:         linear-gradient(120deg,transparent 0%,rgb(250, 255, 222) 30%,rgba(243, 245, 130, 0.96)100%,transparent 60%);
+  background-image:         linear-gradient(120deg,transparent 0%,rgb(254, 255, 174, 0.96) 30%,rgba(255,255,255)100%,transparent 60%);
   background-repeat: no-repeat;
 
 }
+.tamenameA{
+  font-size: 20px;
+     color: #505050;/*文字色*/  
+  padding: 1em;/*文字周りの余白*/
+  display: inline-block;
+  line-height: 0.5;/*行高*/
+  background: white;/*背景色*/
+  background-size: 100% 100%;
+  vertical-align: middle;
+  border-radius: 0px 25px 25px 0px;/*左側の角を丸く*/
+   background-image: -webkit-linear-gradient(60deg,transparent 30%,rgb(255, 255, 255) 70%,rgb(255, 255, 255) 100%,transparent 60%);
+  background-image:         linear-gradient(60deg,transparent 30%,rgb(222, 233, 255) 70%,rgb(222, 233, 255) 100%,transparent 60%);
+  background-repeat: no-repeat;
+}
+.tamenameB{
+  font-size: 20px;
+     color: #505050;/*文字色*/  
+  padding: 1em;/*文字周りの余白*/
+  display: inline-block;
+  line-height: 0.5;/*行高*/
+  background: white;/*背景色*/
+   background-size: 100% 100%;
+  vertical-align: middle;
 
+  border-radius: 25px 0px 0px 25px;/*左側の角を丸く*/
+   background-image: -webkit-linear-gradient(120deg,transparent 30%,rgba(255,255,255) 70%,rgba(255,255,255) 100%,transparent 60%);
+  background-image:         linear-gradient(120deg,transparent 0%,rgb(254, 255, 174, 0.96) 30%,rgba(255,255,255)100%,transparent 60%);
+  background-repeat: no-repeat;
 
+}
+.Bsoccer{
+  position: absolute;
+  top: 90% ;
+  right: 0% ;
+}
+.Asoccer{
+  position: absolute;
+  top: 90% ;
+  left: 0% ;
+}
+.Anum{
+  position: absolute;
+  top: 0px ;
+  left: 100% ;
+  font-size: 45px;
+     color: rgb(103, 141, 216) ;/*文字色*/
+     -webkit-text-stroke: 2px rgb(24, 91, 225);
+}
+.Bnum{
+  position: absolute;
+  top: 0px ;
+  right: 100% ;
+  font-size: 45px;
+     color: rgb(254, 255, 174) ;/*文字色*/
+     -webkit-text-stroke: 2px rgb(239, 242, 72);
+}
+.Amenver{
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
+.Bmenver{
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+}
 .rulue{
     font-size: 30px;
      color: #020202;/*文字色*/  
@@ -55,4 +137,116 @@
   vertical-align: middle;
   
   
+}
+.topbar{
+    position: absolute;
+    top: 14px;
+    left: 250px;
+    transform: translateX(-60%);
+
+    display: flex;
+    gap: 12px;
+    height: 58px;
+
+    filter: drop-shadow(0 4px 12px #0008);
+}
+.event {
+    background: rgba(91, 91, 91, 0.886);
+    border-left: 5px solid #eaff55;
+    padding: 7px 20px;
+    min-width: 200px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.eyebrow {
+    color: #c8d7e0;
+    font: 700 10px Arial, sans-serif;
+    letter-spacing: 2px;
+    
+}
+.event strong {
+    font-size: 23px;
+    letter-spacing: 1.4px;
+    line-height: 1.1;
+    
+}
+.round {
+    background: #ebff5598;
+    color: #121820;
+    padding: 0 24px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 17px;
+    letter-spacing: 1px;
+
+    transform: skew(-8deg);
+}
+:root {
+    --a: #25c9e8;
+    --b: #ff704d;
+    --panel: rgba(9, 15, 24, .93);
+    --white: #f7fbff;
+    --muted: #a9bdca;
+    --edge: #ffffff33;
+
+    font-family: Impact, "Arial Narrow", "Noto Sans JP", sans-serif;
+}
+.lowerbar {
+    position: absolute;
+    top: 20px;
+    right: -215px;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    background: rgba(139, 139, 139);
+
+    
+    height: 44px;
+
+    box-shadow: 0 5px 16px rgba(143, 142, 142);
+}
+
+.match-detail,
+.stage {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 22px;
+    height: 100%;
+}
+
+.match-detail {
+    border-right: 1px solid rgba(119, 119, 119);
+}
+
+.stage strong,
+.match-detail strong {
+    font-size: 15px;
+}
+
+/* 試合ステータス */
+
+.status {
+    margin-left: auto;
+    padding: 0 18px;
+    height: 100%;
+
+    display: grid;
+    place-items: center;
+
+    background: #eeff71;
+    color: #5197ff;
+
+    font: 800 16px Arial, sans-serif;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
 }

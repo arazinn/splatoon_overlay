@@ -5,12 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overlay</title>
     <link rel="stylesheet" href="overlay.css">
-    <script src="overlay.js"></script>
+    <script src="overlay.js" defer></script>
 </head>
 <body>
-<div id = "rulue" class="rulue">ガチヤグラ</div>
-<div id = "stage" class="stage">stage</div>
-<div id = "ad" class= "ad">AD</div>
+        <header class="topbar">
+
+            <div class="event">
+
+                <span class="eyebrow">
+                    SPLATOON 3 TOURNAMENT
+                </span>
+
+                <strong id="eventName">
+                    INK CLASH CUP
+                </strong>
+
+            </div>
+
+            <div class="round" id="roundName">
+                GRAND FINAL
+            </div>
+            
+        </header>
+          <footer class="lowerbar">
+
+            <!-- ルール -->
+
+            <div class="match-detail">
+
+                <span class="detail-label">
+                    MODE
+                </span>
+
+                <strong id="mode">
+                    ガチエリア
+                </strong>
+
+            </div>
+
+
+            <!-- ステージ -->
+
+            <div class="stage">
+
+                <span class="detail-label">
+                    STAGE
+                </span>
+
+                <strong id="stage">
+                    ステージ名
+                </strong>
+
+            </div>
+
+
+            <!-- 試合状況 -->
+
+            <div class="status" id="matchStatus">
+                UP NEXT
+            </div>
+
+        </footer>
+
+
 <h1 class ="Amenver">
   <div class="Aname1" id="Aname1">Team A</div>
 <br>
@@ -19,8 +76,13 @@
   <div class="Aname3" id ="Aname3">Team A</div>
 <br>
   <div class="Aname4" id="Aname4">Team A</div>
-  <div id = "Anum" class = "Anum">1</div>
+<br>
+
 </h1>
+<div class=" Asoccer" id="Asoccer">
+  <div id = "tamenameA" class = "tamenameA">NAME A</div>
+  <div id = "Anum" class = "Anum">1</div>
+</div>
 <h1 class ="Bmenver">
   <div class="Bname1" id="Bname1">Team B</div>
 <br>
@@ -29,8 +91,13 @@
   <div class="Bname3" id="Bname3">Team B</div>
 <br>
   <div class="Bname4" id="Bname4">Team B</div>
-  <div id = "Bnum" class = "Bnum">1</div>
+<br>
+
+
 </h1>
-    
+    <div class=" Bsoccer" id="Bsoccer">
+  <div id = "tamenameB" class = "tamenameB">NAME B</div> 
+   <div id = "Bnum" class = "Bnum">1</div>
+</div>
 </body>
 </html>

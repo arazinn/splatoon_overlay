@@ -2,9 +2,9 @@
 
   font-size: 20px;
      color: #505050;/*文字色*/
-  padding: 1em;/*文字周りの余白*/
+  padding: 0.7em;/*文字周りの余白*/
   display: inline-block;
-  line-height: 0.5;/*行高*/
+  line-height: 0.3;/*行高*/
   background: white;/*背景色*/
   vertical-align: middle;
   border-radius: 0px 25px 25px 0px;/*左側の角を丸く*/
@@ -17,12 +17,12 @@
 
   font-size: 20px;
      color: #505050;/*文字色*/  
-  padding: 1em;/*文字周りの余白*/
+  padding: 0.7em;/*文字周りの余白*/
   display: inline-block;
-  line-height: 0.5;/*行高*/
+  line-height: 0.3;/*行高*/
   background: white;/*背景色*/
   vertical-align: middle;
-
+  
   border-radius: 25px 0px 0px 25px;/*左側の角を丸く*/
    background-image: -webkit-linear-gradient(120deg,transparent 30%,rgba(255,255,255) 70%,rgba(255,255,255) 100%,transparent 60%);
   background-image:         linear-gradient(120deg,transparent 0%,rgb(254, 255, 174, 0.96) 30%,rgba(255,255,255)100%,transparent 60%);
@@ -87,13 +87,17 @@
 }
 .Amenver{
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 0;
-
+    gap: 2px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
+        font-family:
+        "Yu Gothic",
+        "Meiryo",
+        "Noto Sans JP",
+        sans-serif;
 
     margin: 0;
     padding: 0;
@@ -101,13 +105,17 @@
 }
 .Bmenver{
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 0;
-
+    gap: 2px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0;
+        font-family:
+        "Yu Gothic",
+        "Meiryo",
+        "Noto Sans JP",
+        sans-serif;
 
     margin: 0;
     padding: 0;

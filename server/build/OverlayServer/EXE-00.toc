@@ -70,7 +70,7 @@
  [],
  False,
  False,
- 1793808584,
+ 1793887223,
  [('run.exe',
    'C:\\Users\\akit1\\Desktop\\spuraoverlay.ver2\\.venv\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
    'EXECUTABLE')],

@@ -10,7 +10,7 @@ const elements = {
 
     mode: document.getElementById("mode"),
     stage: document.getElementById("stage"),
-    matchStatus: document.getElementById("matchStatus"),
+    seriesFormat: document.getElementById("seriesFormat"),
 
     teamA: document.getElementById("tamenameA"),
     scoreA: document.getElementById("Anum"),
@@ -37,22 +37,74 @@ const elements = {
 // ==============================
 // オーバーレイ更新
 // ==============================
+function updateLamps(container, wins, seriesFormat, reverse = false) {
+
+    const bestOf = Number(
+        seriesFormat.replace("BEST OF ", "")
+    );
+
+    const maxWins = Math.ceil(bestOf / 2);
+
+    const activeWins = Math.min(
+        maxWins,
+        Math.max(0, Number(wins))
+    );
+
+    container.replaceChildren();
+
+    for (let i = 0; i < maxWins; i++) {
+
+        const lamp = document.createElement("div");
+        lamp.classList.add("lamp");
+
+        if (reverse) {
+            // 右から左に点灯
+            if (i >= maxWins - activeWins) {
+                lamp.classList.add("on");
+            }
+        } else {
+            // 左から右に点灯
+            if (i < activeWins) {
+                lamp.classList.add("on");
+            }
+        }
+
+        container.appendChild(lamp);
+    }
+}
 
 function updateOverlay(data) {
 
+    // 大会情報
     elements.eventName.textContent = data.event_name;
     elements.roundName.textContent = data.round_name;
 
+    // 試合情報
     elements.mode.textContent = data.mode;
     elements.stage.textContent = data.stage;
-    elements.matchStatus.textContent = data.match_status;
+    elements.seriesFormat.textContent = data.series_format;
 
+    // チーム名
     elements.teamA.textContent = data.team_a.name;
-    elements.scoreA.textContent = data.team_a.wins;
-
     elements.teamB.textContent = data.team_b.name;
-    elements.scoreB.textContent = data.team_b.wins;
 
+    // ランプ表示
+// チームA：左から右に点灯
+    updateLamps(
+        elements.scoreA,
+        data.team_a.wins,
+        data.series_format,
+        false
+    );
+
+    // チームB：右から左に点灯
+    updateLamps(
+        elements.scoreB,
+        data.team_b.wins,
+        data.series_format,
+        true
+    );
+    // メンバー情報
     data.team_a.members.forEach((member, index) => {
         elements.membersA[index].textContent = member;
     });

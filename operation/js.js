@@ -27,7 +27,14 @@ let reconnectTimer = null;
 // ==============================
 // フィードバック表示
 // ==============================
+getElement("matchStatus").addEventListener("change", () => {
+    const maxWins = getMaxWins();
 
+    winsA = Math.min(winsA, maxWins);
+    winsB = Math.min(winsB, maxWins);
+
+    updateScoreDisplay();
+});
 function showFeedback(message, success = true) {
     feedback.textContent = message;
     feedback.style.color = success ? "#72e0a0" : "#ff8585";
@@ -70,13 +77,13 @@ function getMatchData() {
         team_a: getElement("teamA").value,
         team_b: getElement("teamB").value,
 
-        series_format: getElement("seriesFormat").value,
+        series_format: getElement("matchStatus").value,
         game_number: getElement("gameNumber").value,
 
         mode: getElement("mode").value,
         stage: getElement("stage").value,
 
-        match_status: getElement("matchStatus").value
+        match_status: getElement("seriesFormat").value,
     };
 }
 
@@ -123,10 +130,12 @@ document.querySelectorAll(".scorebuttons button").forEach(button => {
         const side = button.dataset.side;
         const delta = Number(button.dataset.delta);
 
+        const maxWins = getMaxWins();
+
         if (side === "A") {
-            winsA = Math.max(0, winsA + delta);
+            winsA = Math.min(maxWins, Math.max(0, winsA + delta));
         } else if (side === "B") {
-            winsB = Math.max(0, winsB + delta);
+            winsB = Math.min(maxWins, Math.max(0, winsB + delta));
         }
 
         updateScoreDisplay();
@@ -157,7 +166,13 @@ getElement("reset").addEventListener("click", async () => {
 
     await submitScore();
 });
+function getMaxWins() {
+    const bestOf = getElement("matchStatus").value;
 
+    const totalGames = Number(bestOf.replace("BEST OF ", ""));
+
+    return Math.ceil(totalGames / 2);
+}
 
 // ==============================
 // 表示更新ボタン

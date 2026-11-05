@@ -2,9 +2,9 @@
 
   font-size: 20px;
      color: #505050;/*文字色*/
-  padding: 1em;/*文字周りの余白*/
+  padding: 0.7em;/*文字周りの余白*/
   display: inline-block;
-  line-height: 0.5;/*行高*/
+  line-height: 0.3;/*行高*/
   background: white;/*背景色*/
   vertical-align: middle;
   border-radius: 0px 25px 25px 0px;/*左側の角を丸く*/
@@ -17,12 +17,12 @@
 
   font-size: 20px;
      color: #505050;/*文字色*/  
-  padding: 1em;/*文字周りの余白*/
+  padding: 0.7em;/*文字周りの余白*/
   display: inline-block;
-  line-height: 0.5;/*行高*/
+  line-height: 0.3;/*行高*/
   background: white;/*背景色*/
   vertical-align: middle;
-
+  
   border-radius: 25px 0px 0px 25px;/*左側の角を丸く*/
    background-image: -webkit-linear-gradient(120deg,transparent 30%,rgba(255,255,255) 70%,rgba(255,255,255) 100%,transparent 60%);
   background-image:         linear-gradient(120deg,transparent 0%,rgb(254, 255, 174, 0.96) 30%,rgba(255,255,255)100%,transparent 60%);
@@ -69,31 +69,76 @@
   top: 90% ;
   left: 0% ;
 }
-.Anum{
-  position: absolute;
-  top: 0px ;
-  left: 100% ;
-  font-size: 45px;
-     color: rgb(103, 141, 216) ;/*文字色*/
-     -webkit-text-stroke: 2px rgb(24, 91, 225);
+/* チームAのランプ配置 */
+.Anum {
+    position: absolute;
+    top: -40%;
+    left: 0%;
+    transform: translateY(-50%);
 }
-.Bnum{
-  position: absolute;
-  top: 0px ;
-  right: 100% ;
-  font-size: 45px;
-     color: rgb(254, 255, 174) ;/*文字色*/
-     -webkit-text-stroke: 2px rgb(239, 242, 72);
+
+/* チームBのランプ配置 */
+.Bnum {
+    position: absolute;
+    top: -40%;
+    right: 0%;
+    transform: translateY(-50%);
+}
+
+/* ランプ全体 */
+.win-lamps {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    white-space: nowrap;
+}
+
+/* ランプの基本デザイン */
+.lamp {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: #343a40;
+    border: 2px solid #777;
+
+    box-sizing: border-box;
+}
+
+/* チームAの点灯状態 */
+.Anum .lamp.on {
+    background: #25c9e8;
+    border-color: #b5f4ff;
+
+    box-shadow:
+        0 0 8px #25c9e8,
+        0 0 16px #25c9e8;
+}
+
+/* チームBの点灯状態 */
+.Bnum .lamp.on {
+    background: #ff704d;
+    border-color: #ffd1b5;
+
+    box-shadow:
+        0 0 8px #ff704d,
+        0 0 16px #ff704d;
 }
 .Amenver{
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 0;
-
+    gap: 2px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
+        font-family:
+        "Yu Gothic",
+        "Meiryo",
+        "Noto Sans JP",
+        sans-serif;
 
     margin: 0;
     padding: 0;
@@ -101,13 +146,17 @@
 }
 .Bmenver{
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 0;
-
+    gap: 2px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 0;
+        font-family:
+        "Yu Gothic",
+        "Meiryo",
+        "Noto Sans JP",
+        sans-serif;
 
     margin: 0;
     padding: 0;

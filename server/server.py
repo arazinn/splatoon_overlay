@@ -24,7 +24,7 @@ match_data = {
     "game_number": "GAME 1",
     "mode": "ガチヤグラ",
     "stage": "ステージ名",
-    "match_status": "BEST OF 5",
+    "match_status": "UP NEXT",
     "team_a": {"name": "BLUE", "wins": 0, "members": ["A1", "A2", "A3", "A4"]},
     "team_b": {"name": "ORANGE", "wins": 0, "members": ["B1", "B2", "B3", "B4"]},
 }
@@ -42,11 +42,16 @@ class MatchUpdate(BaseModel):
     round_name: str
     team_a: str
     team_b: str
-    series_format: str
+
+    series_format: Literal[
+        "BEST OF 3", "BEST OF 5", "BEST OF 7", "BEST OF 9", "BEST OF 10"
+    ]
+
     game_number: str
     mode: str
     stage: str
-    match_status: Literal["BEST OF 3", "BEST OF 5", "BEST OF 7"]
+
+    match_status: Literal["UP NEXT", "MATCH IN PROGRESS", "GAME COMPLETE", "PAUSED"]
 
 
 class ScoreUpdate(BaseModel):

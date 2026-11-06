@@ -190,7 +190,7 @@
 .topbar{
     position: absolute;
     top: 14px;
-    left: 250px;
+    left: 160px;
     transform: translateX(-60%);
 
     display: flex;
@@ -223,6 +223,9 @@
     
 }
 .round {
+    position: absolute;
+    top: 70px;
+
     background: #ebff5598;
     color: #121820;
     padding: 0 24px;
@@ -247,17 +250,17 @@
 }
 .lowerbar {
     position: absolute;
-    top: 20px;
+    top: 0px;
     right: -215px;
     transform: translateX(-50%);
 
     display: flex;
     align-items: center;
 
-    background: rgba(139, 139, 139);
+    background: rgba(139, 139, 139, 0.766);
 
     
-    height: 44px;
+    height: 22px;
 
     box-shadow: 0 5px 16px rgba(143, 142, 142);
 }
